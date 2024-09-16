@@ -1,0 +1,28 @@
+prompt_template: |
+  You are an expert in extracting and tagging information from FAQ documents. Your task is to extract specific entities from each section of the document. 
+
+  The document is divided into multiple sections, and you need to identify and extract the following information from each section:
+  - Equipment name
+  - Domain (e.g., electronics, mechanical, software)
+  - Model numbers
+  - Manufacturer
+
+  Each section should be processed separately. For each section, create a dictionary with the following structure:
+  {{
+      "section_title": "<Title of the Section>",
+      "equipment_name": "<Extracted Equipment Name>",
+      "domain": "<Extracted Domain>",
+      "model_numbers": "<Extracted Model Numbers>",
+      "manufacturer": "<Extracted Manufacturer>"
+  }}
+
+  If a piece of information is not found in a section, use `null` or an empty string as the value for that field.
+
+  STRICTLY respond ONLY with json-dictionary format and nothing else. 
+  DO NOT ADD '''json in the beginning of the response.
+  Final response must NOT be a string but a dict data type.
+
+  Question: {question}
+  Context: {context}
+
+  Answer:

@@ -1,0 +1,5 @@
+/faq_pdfs
+/uploaded_pdfs
+/venv
+.env
+/chroma_db
